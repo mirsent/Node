@@ -55,9 +55,7 @@ php artisan make:controller ControllerName
 php artisan make:controller ControllerName --resource
 ```
 
-### model
-
-models 目录用于存放与数据库交互的模型类
+### 迁移文件
 
 建立迁移文件：
 
@@ -65,6 +63,14 @@ models 目录用于存放与数据库交互的模型类
 php artisan migrate:make create_users_table
 php artisan migrate
 ```
+
+> 创建表： `Schema::create`
+> 创建表： `Schema::table`
+
+### model
+
+models 目录用于存放与数据库交互的模型类
+
 
 ```php
 DB('users')
@@ -148,4 +154,8 @@ public function index()
 运行更新命令：`composer dump-autoload`
 
 
-控制器中的方法返回页面或者redirect都必须要 return
+控制器中的方法返回页面或者redirect都必须要 return ；
+
+`view` 函数定位到 `resources/views` 目录；
+`env` 函数获取 `.env` 配置 : `'name' => env('APP_NAME', 'Laravel')` 
+第一个参数是配置项名，第二个参数是默认值；
