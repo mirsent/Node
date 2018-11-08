@@ -14,12 +14,25 @@
 
 ## laravel
 
-composer安装laravel：
+### 安装
 
-```php
-composer create-project laravel/laravel your-project-name --prefer-dist
-```
-`--prefer-dist`直接下载
+#### 通过 Laravel 安装器
+
+使用 Composer 下载 Laravel 安装程序：
+
+`composer global require "laravel/installer"`
+
+`laravel new` 命令会在你指定的目录中创建一个新的 Laravel 项目
+
+`laravel new blog`
+
+#### 通过 Composer 创建项目
+
+`composer create-project --prefer-dist laravel/laravel blog "5.5.*"`
+
+#### 应用密钥
+
+`php artisan key:generate`
 
 ### route
 
@@ -47,6 +60,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
 });
 ```
 
+### 配置
+
+时区 -> PRC； locale -> zh-ZN；
+
 ### controller
 
 创建控制器：
@@ -65,7 +82,7 @@ php artisan migrate
 ```
 
 > 创建表： `Schema::create`
-> 创建表： `Schema::table`
+> 编辑表： `Schema::table`
 
 ### model
 
